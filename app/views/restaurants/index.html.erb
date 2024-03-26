@@ -1,16 +1,16 @@
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
   <% @restaurants.each do |restaurant| %>
-  <div class="shadow-md shadow-stone-200 rounded-lg p-2 m-1 md:m-3 w-4/5 bg-gray-50 flex">
+  <div class="shadow-md shadow-stone-200 rounded-lg p-2 m-1 md:m-3 w-4/5 bg-gray-50 flex justify-start transition ease-in-out delay-50 hover:shadow-stone-400 hover:translate-y-1">
     <div>
       <%= cl_image_tag restaurant.photo.key, height: 200, width: 150, crop: :fill, class: "rounded-lg" %>
     </div>
-    <div class="flex flex-col p-1">
-      <p>
-        <h1><%= restaurant.name %></h1>
-        <span class="text-sm"><%= restaurant.average_rating %> ⭐</span>
-        <span class="text-xs"><%= restaurant.category %></span>
-        <%= link_to "Info", restaurant_path(restaurant), class:"text-xs text-sky-500 hover:text-sky-700" %>
-      </p>
+    <div class="flex flex-col p-1 justify-center">
+        <h1 class="text-xl"><%= restaurant.name%></h1>
+        <div class="flex flex-col justify-end">
+          <span class="text-sm"><%= restaurant.average_rating %> ⭐</span>
+          <span class="text-xs"><%= restaurant.category %></span>
+          <%= link_to "Info", restaurant_path(restaurant), class:"text-xs text-sky-500 hover:text-sky-700" %>
+        </div>
     </div>
   </div>
   <% end %>
