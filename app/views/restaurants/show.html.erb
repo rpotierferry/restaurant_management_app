@@ -3,6 +3,7 @@
 
 
     <div class="p-5 md:p-10">
+      <%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill %>
       <h1 class="text-3xl"><%= @restaurant.name %></h1>
       <h2 class="text-xl"><%= @restaurant.address %></h2>
       <h3><%= @restaurant.category %> cuisine</h3>
