@@ -1,8 +1,11 @@
-<% @restaurants.each do |restaurant| %>
-  <p>
-    <h1><%= restaurant.name %></h1>
-    <%= link_to "See details", restaurant_path(restaurant) %>
-  </p>
-<% end %>
-
-<%= link_to 'Add a new restaurant', new_restaurant_path %>
+<div class="grid grid-cols-1 md:grid-cols-3 justify-items-center">
+  <% @restaurants.each do |restaurant| %>
+  <div>
+    <p>
+      <h1><%= restaurant.name %></h1>
+      <%= link_to "See details", restaurant_path(restaurant) %>
+    </p>
+  </div>
+  <% end %>
+</div>
+<%= link_to 'Add a new restaurant', new_restaurant_path, class:"bg-sky-500 hover:bg-sky-700 rounded-md p-2" %>
