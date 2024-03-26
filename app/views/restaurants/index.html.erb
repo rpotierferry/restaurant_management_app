@@ -1,6 +1,6 @@
-<div class="grid grid-cols-1 md:grid-cols-3 justify-items-center">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
   <% @restaurants.each do |restaurant| %>
-  <div>
+  <div class="shadow-md shadow-stone-200 rounded-lg p-2 m-1 md:m-3 w-4/5 bg-gray-50">
     <p>
       <h1><%= restaurant.name %></h1>
       <%= link_to "See details", restaurant_path(restaurant) %>
@@ -8,4 +8,6 @@
   </div>
   <% end %>
 </div>
-<%= link_to 'Add a new restaurant', new_restaurant_path, class:"bg-sky-500 hover:bg-sky-700 rounded-md p-2" %>
+<div>
+  <%= link_to 'Add a new restaurant', new_restaurant_path, class:"bg-sky-500 hover:bg-sky-700 rounded-md p-2" %>
+</div>
