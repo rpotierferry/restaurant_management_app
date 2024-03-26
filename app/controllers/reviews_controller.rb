@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :set_restaurant, only: %w[index create]
+  def index
+    @reviews = @restaurant.reviews
+  end
+
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.build(review_params)
@@ -14,5 +19,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content, :rating)
+  end
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

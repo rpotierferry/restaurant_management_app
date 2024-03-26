@@ -10,5 +10,4 @@ class Review < ApplicationRecord
   def update_restaurant_average_rating
     self.restaurant.update_average_rating!
   end
-
 end
