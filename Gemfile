@@ -28,6 +28,8 @@ gem 'jbuilder'
 
 gem 'simple_form'
 
+gem 'dotenv-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -69,6 +71,6 @@ end
 gem 'rails-controller-testing', group: [:test]
 gem 'rspec-rails', group: [:test]
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'
 
-gem "tailwindcss-rails", "~> 2.3"
+gem 'tailwindcss-rails', '~> 2.3'
