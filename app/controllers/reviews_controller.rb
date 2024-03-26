@@ -1,14 +1,13 @@
 class ReviewsController < ApplicationController
   def create
-    @review = Review.new(review_params)
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @review.restaurant = @restaurant
+    @review = @restaurant.reviews.build(review_params)
+
     if @review.save
-      @review_total = @restaurant.reviews.count
-      @review_total.zero? ? @restaurant.average_rating = @review.rating : @restaurant.average_rating = (@restaurant.average_rating + @review.rating) / @review_total
-      @restaurant.save
+      redirect_to restaurant_path(@restaurant), notice: 'Review was successfully created.'
+    else
+      render :new
     end
-    redirect_to restaurant_path(@restaurant), notice: 'Review was successfully created.'
   end
 
   private
