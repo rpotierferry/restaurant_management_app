@@ -1,7 +1,8 @@
 <% @reviews.each do  |review| %>
 <div>
   <p>
-    <% review.content %>
+    <%= review.content %>
   </p>
   <span><%= review.rating %>⭐</span>
 </div>
+<% end %>
