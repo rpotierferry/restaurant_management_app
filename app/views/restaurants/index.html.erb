@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
   <% @restaurants.each do |restaurant| %>
-  <div class="shadow-md shadow-stone-200 rounded-lg p-2 m-1 md:m-3 w-4/5 bg-gray-50 flex justify-start transition ease-in-out delay-50 hover:shadow-stone-400 hover:translate-y-1">
+  <div class="shadow-md shadow-stone-200 rounded-lg p-2 m-1 md:m-3 w-4/5 bg-gray-50 flex justify-start transition ease-in-out delay-50 hover:shadow-stone-400 hover:translate-x-1">
     <div>
       <%= cl_image_tag restaurant.photo.key, height: 200, width: 150, crop: :fill, class: "rounded-lg" %>
     </div>
